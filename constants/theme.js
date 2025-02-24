@@ -1,7 +1,7 @@
 import { textChangeRangeIsUnchanged } from "typescript";
 
-export const theme = {
-  colors: {
+const theme = {
+  color: {
     primary: "#00C26f",
     primaryDark: "#00ac62",
     dark: "#3e3e3e",
@@ -30,3 +30,5 @@ export const theme = {
     xxl: 22,
   },
 };
+
+export default theme
