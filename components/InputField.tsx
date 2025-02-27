@@ -10,8 +10,8 @@ const InputField = (props: { placeholder: string, icons: string, inputRef: React
         style={styles.input}
         placeholder={props.placeholder} 
         onChangeText={(text) => {
-          if (props.inputRef && props.inputRef.current) {
-            (props.inputRef.current as any).value = text;
+          if (props.inputRef) {
+            (props.inputRef as any).current = text;
           }
         }} 
         secureTextEntry={props.secureTextEntry} 

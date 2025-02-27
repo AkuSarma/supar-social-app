@@ -9,13 +9,29 @@ import Button from '@/components/Button';
 import theme from '@/constants/theme';
 
 const Login = () => {
-  const usernameRef = useRef('');
+    const emailRef = useRef("");
   const passwordRef = useRef('');
 
   const Submit = () => {
-    const username = usernameRef.current;
+    const email = emailRef.current;
     const password = passwordRef.current;
-    alert(`Username: ${username}, Password: ${password}`);
+
+    // checking
+    if ( !email || !password) {
+      alert("Please fill all the fields");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Invalid email address");
+      return;
+    }
   }
 
   return (
@@ -31,7 +47,7 @@ const Login = () => {
           <InputField
             placeholder="email"
             icons="mail"
-            inputRef={usernameRef}
+            inputRef={emailRef}
           />
           <InputField
             placeholder="Password"
