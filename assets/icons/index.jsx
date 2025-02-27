@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import Home from './Home';
 import Mail from './Mail';
@@ -9,7 +8,7 @@ import Plus from './Plus';
 import Search from './Search';
 import Location from './Location';
 import Call from './Call';
-import { theme } from '../../constants/theme';
+import theme from '../../constants/theme';
 import Camera from './Camera';
 import Edit from './Edit';
 import ArrowLeft from './ArrowLeft';
@@ -54,7 +53,7 @@ const Icon = ({name, ...props}) => {
         height={props.size || 24}
         width={props.size || 24}
         strokeWidth={props.strokeWidth || 1.9}
-        color={theme.colors.textLight}
+        color={theme.color.dark}
         {...props}
     />
   )
